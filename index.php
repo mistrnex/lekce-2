@@ -55,14 +55,56 @@
 
       <div class="starter-template">
         <h1>
-<?php
-  echo 'Centrální obrazovka všehomíra';
 
-?>
+          
+          <?php
+          $text = 'Ahoj';
+           $text2 = ' Aleš';
+          ?>
+       <h1>
+         
+        
+        <?php   
+          echo $text;
+           ?>
+         
+           <?php 
+          echo $text2;
+      ?>
+          </h1>
+          <?php
+           $boolean = false;
+             var_dump($boolean);
+          $cislo=5;
+          $cislo=5+$cislo;
+           ?>
+       <h2>   
+          <?php
+          echo $cislo;
+          
+          ?>
+          </h2> 
+          
+          
+          
         </h1>
+       <?php 
+        $pole1 = [2,'.','Ahoj'];
+         var_dump($pole1);
+        $pole2 = ['name' => 'Aleš', 'surname' => 'Růžička'];
+        
+        
+         ?>
         <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
       </div>
 
+      <?php
+        
+            
+          
+  echo 'Programators školení';
+
+?>
     </main><!-- /.container -->
 
     <!-- Bootstrap core JavaScript

@@ -17,9 +17,14 @@
   </head>
 
   <body>
-
+<?php
+   $projectName = 'IT Programators PHP'; 
+    ?>
+    
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">    <?php   
+          echo $projectName;
+           ?></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -61,6 +66,7 @@
           $text = 'Ahoj';
            $text2 = ' Aleš';
           ?>
+            </h1>
        <h1>
          
         
@@ -81,30 +87,34 @@
        <h2>   
           <?php
           echo $cislo;
-          
-          ?>
-          </h2> 
-          
-          
-          
-        </h1>
+           ?>
+          </h2>        
        <?php 
         $pole1 = [2,'.','Ahoj'];
          var_dump($pole1);
         $pole2 = ['name' => 'Aleš', 'surname' => 'Růžička'];
-        
-        
-         ?>
+        ?>
         <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
       </div>
-
+<h1>
+  <?php echo $text; ?> <?php echo $pole2["name"]." ".$pole2["surname"]; ?> </h1>
+      </h1>
       <?php
-        
-            
-          
-  echo 'Programators školení';
-
+        echo 'Programators školení';
 ?>
+     <h1>
+       <?php
+       $counter = 487;
+        echo 'Počítadlo přístupů: '.$counter;
+?>
+       
+   </h1>
+    <h1>
+    <?php 
+        $numbers = [0, 1, 1, 2, 3, 5, 8];
+         var_dump($numbers);
+    ?>
+  </h1>
     </main><!-- /.container -->
 
     <!-- Bootstrap core JavaScript

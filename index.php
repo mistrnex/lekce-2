@@ -6,8 +6,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-
-    <title>Starter Template for Bootstrap</title>
+<?php
+   $pageName = 'Home'; 
+    ?>
+    <title>Template -<?php echo $pageName ?>
+    </title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -114,7 +117,172 @@
         $numbers = [0, 1, 1, 2, 3, 5, 8];
          var_dump($numbers);
     ?>
+      <div class="starter-template">
+           <?php   
+         $pole3 = ['závodníci' => ['Adam', 'Eva' , 'Jakub'], 'pořadí' => [2, 3, 1]];
+           ?>
+        
+        <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Pořadí</th>
+      <th scope="col">Závodník</th>
+  
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td><?php echo $pole3['závodníci'][2]; ?></td>
+    
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td><?php echo $pole3['závodníci'][0]; ?></td>
+    
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td><?php echo $pole3['závodníci'][1]; ?></td>
+  
+    </tr>
+  </tbody>
+</table>
+ </div>
+       
   </h1>
+    
+    <div class="starter-template">
+      <h2>
+        Domácí úkol č.2
+      </h2>
+         <?php
+      $a=10;
+      $b=5;
+      $area=($a*$b);
+      
+      ?>
+      <h1>
+        Obdélník o stranách a:<?php echo $a; ?>, b:<?php echo $b; ?> má obsah {<?php echo $area; ?>}. 
+      </h1>
+   
+      
+    </div>
+    
+        <div class="starter-template">
+      <h2>
+        Domácí úkol č.3
+      </h2>
+          <?php
+      $stranaA=6;
+      $stranaB=6;
+    
+      $uhelBeta=60;
+      $uhelAlfa=rad2deg(asin($stranaA*sin(deg2rad($uhelBeta))/$stranaB)) ;
+          $uhelGama=180-$uhelAlfa-$uhelBeta;
+        $stranaC=$stranaB*sin(deg2rad($uhelGama))/sin(deg2rad($uhelBeta)) ;
+          $obvod=$stranaA+$stranaB+$stranaC ;
+        $s=($stranaA+$stranaB+$stranaC)/2;
+          $obsah=sqrt(($s*($s-$stranaA)*($s-$stranaB)*($s-$stranaC))) ;
+      ?>
+             <h1>
+        Trojúhelník podle věty Ssu. 
+      </h1>
+          <h2>
+  Vstupní parametry:
+      </h2>
+             
+        <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Vstupní parametr</th>
+      <th scope="col">Hodnota</th>
+  
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">strana a</th>
+      <td><?php echo $stranaA; ?></td>
+    
+    </tr>
+    <tr>
+      <th scope="row">strana b</th>
+      <td><?php echo $stranaA; ?></td>
+    
+    </tr>
+    <tr>
+      <th scope="row">úhel Beta</th>
+      <td><?php echo $uhelBeta; ?></td>
+  
+    </tr>
+  </tbody>
+</table>
+        <h2>
+  Vlastnosti trojúhelníku:
+      </h2> 
+  
+    <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Výstupní parametr</th>
+      <th scope="col">Hodnota</th>
+  
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">strana a</th>
+      <td><?php echo $stranaA; ?></td>
+    
+    </tr>
+    <tr>
+      <th scope="row">strana b</th>
+      <td><?php echo $stranaA; ?></td>
+    
+    </tr>
+       <tr>
+      <th scope="row">strana c</th>
+      <td><?php echo $stranaC; ?></td>
+    
+    </tr>
+    
+        <tr>
+      <th scope="row">úhel Alfa</th>
+      <td><?php echo $uhelAlfa; ?>
+          
+          </td>
+  
+    </tr>
+    
+    <tr>
+      <th scope="row">úhel Beta</th>
+      <td><?php echo $uhelBeta; ?></td>
+  
+    </tr>
+    
+      <tr>
+      <th scope="row">úhel Gama</th>
+      <td><?php echo $uhelGama; ?></td>
+  
+    </tr>
+    
+     <tr>
+      <th scope="row">Obvod</th>
+      <td><?php echo $obvod; ?></td>
+  
+    </tr>
+    
+         <tr>
+      <th scope="row">Obsah</th>
+      <td><?php echo $obsah; ?></td>
+  
+    </tr>
+  </tbody>
+</table>
+   
+      
+    </div>
     </main><!-- /.container -->
 
     <!-- Bootstrap core JavaScript

@@ -60,7 +60,7 @@
         
         <h1> Podmínka příklad: 
 <?php
-  $name = 'Aleš';
+  $name = 'Petr';
 if ($name == 'Aleš') {
   echo 'Čau '.$name;
 
@@ -194,6 +194,8 @@ if ($name == 'Aleš') {
       foreach($prospech as $jmeno => $vysledky){
         ?>
           <h1> <?php echo $jmeno ?></h1>
+  
+  
   <?php
   foreach($vysledky as $predmet => $znamka){
     ?>
@@ -231,6 +233,22 @@ if ($name == 'Aleš') {
        <?php
       $nasobilka1=[1, 2, 3, 4, 5, 6, 7, 8, 9];
       $nasobilka2=[1, 2, 3, 4, 5, 6, 7, 8, 9];
+  
+  $z=0;
+  $x=0;
+  
+  while ($z<10) {
+    echo $nasobilka1[$z]*$nasobilka2[$x];
+    
+    $z=$z+1;
+    while ($x<10) {
+      
+      echo $nasobilka1[$z]*$nasobilka2[$x];
+      $x=$x+1;
+      
+    }
+    
+  }
            ?>
   
   <?php

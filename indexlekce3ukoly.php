@@ -2,6 +2,7 @@
 <html lang="en">
   <?php
    session_start() ;
+  $jmena='Petr';
   ?>
   <head>
     <meta charset="utf-8">
@@ -65,7 +66,7 @@
        
         
         if (array_key_exists('accessed',$_SESSION)) {
-          if (array_key_exists('jmeno', $_GET)) {
+          if (array_key_exists('jmena', $_POST)) {
         echo 'Cau';
         } else {
           echo 'Ahoj' ;
@@ -99,13 +100,24 @@ echo '<br>Počítadlo přístupů:'. $count;
 ?>
        </h1> 
         
-        <form action="/indexlekce3.php" method="GET">
-          <input type="text">
-        <button type="submit" class="btn btn-success">Submit</button>  
-     
- 
-</form>
 
+  
+  <form action="#" method="get">
+<input type="text" name="name" placeholder="Zadejte jméno"></input><br/>
+
+<input type="submit" name="submit" value="Submit"></input>
+</form>
+<h1>
+<?php
+if( $_GET["name"] )
+{
+echo "Vítejte u nás, ". $_GET['name']. "<br />";
+
+}
+else {echo'Není vyplněno jméno!';
+     }
+?>
+</h1>
         
            <h1>Domácí úkol - Fibonacciho posloupnost</h1>
         <p>
@@ -171,13 +183,19 @@ echo '<br>Počítadlo přístupů:'. $count;
       <?php
       
       $zaci = ['Petr', 'Aleš' , 'Petra' ,'Jakub','Johana', 'Jana', 'Anežka'];
+    
     foreach ($zaci as $jmeno ) {  
       
       ?>
                
   <tr>
-           
-      <th scope="row">1</th>
+         <?php
+      $d=0;
+      
+      ?>
+
+                
+      <th scope="row">5</th>
        <td scope="row"><?php  echo $jmeno  ?></td>
     </tr>
            <?php

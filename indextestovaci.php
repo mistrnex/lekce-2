@@ -2,6 +2,7 @@
 <html lang="en">
   <?php
    session_start() ;
+  $name='Petr';
   ?>
   <head>
     <meta charset="utf-8">
@@ -64,42 +65,23 @@
          <?php
        
         
-        if (array_key_exists('accessed',$_SESSION)) {
-          if (array_key_exists('jmeno', $_GET)) {
-        echo 'Cau';
-        } else {
-          echo 'Ahoj' ;
-          $_SESSION['accessed']=1;
-          }
-        }
-  
 
+  
+          if (array_key_exists('accessed', $_SESSION)) {
+            if (array_key_exists('jmeno', $_POST)) {
+              echo 'Čau ' . $_POST['jmeno'];
+            } else {
+              echo 'Čau, řekni mi své jméno!';
+            }
+            
+          } else {
+            echo 'Čau Neznámý!';
+            $_SESSION['accessed'] = 1;
+          }
           
          ?>
-  <h1>
-  
-<?php
-  if(isset($_SESSION['count'])){
-$count = $_SESSION['count'];
-$count++;
-$count = $_SESSION['count'] = $count;
-} else {
-    $count = $_SESSION['count'] = 0;
-    echo 'Vítejte poprvé na naší stránce!';
-}
-if (fmod($count, 2)==0) {
-  echo 'Vítejte zpět při sudém návratu!';
-  
-}
-else { echo 'Vítejte zpět při lichém návratu!';
-          }
-  
-echo '<br>Počítadlo přístupů:'. $count;
-
-?>
-       </h1> 
         
-        <form action="/indexlekce3.php" method="GET">
+        <form action="/indexlekce3.php" method="POST">
           <input type="text">
         <button type="submit" class="btn btn-success">Submit</button>  
      
@@ -285,8 +267,37 @@ for($i = 0; $i < count($superheroes); $i++) {
     echo "}<br>";
 }
 ?>
+<h1>
+  
+<?php
+  if(isset($_SESSION['count'])){
+$count = $_SESSION['count'];
+$count++;
+$count = $_SESSION['count'] = $count;
+} else {
+    $count = $_SESSION['count'] = 0;
+    echo 'Vítejte poprvé na naší stránce!';
+}
+if (fmod($count, 2)==0) {
+  echo 'Vítejte zpět při sudém návratu!';
+  
+}
+else { echo 'Vítejte zpět při lichém návratu!';
+          }
+  
+echo '<br>Počítadlo přístupů:'. $count;
 
+?>
        </h1> 
+
+<form action="/indextestovaci.php" method="POST">
+            <input type="text" name="jmeno">
+            <input type="submit" value="odeslat">
+</form>
+<?php
+echo $name;
+?>
+
         <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
       </div>
 

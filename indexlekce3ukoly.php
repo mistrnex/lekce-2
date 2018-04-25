@@ -62,21 +62,10 @@
   </tbody>
 </table>
         </h1>
-         <?php
-       
-        
-        if (array_key_exists('accessed',$_SESSION)) {
-          if (array_key_exists('jmena', $_POST)) {
-        echo 'Cau';
-        } else {
-          echo 'Ahoj' ;
-          $_SESSION['accessed']=1;
-          }
-        }
-  
 
-          
-         ?>
+  <p>
+    
+ 
   <h1>
   
 <?php
@@ -99,7 +88,7 @@ echo '<br>Počítadlo přístupů:'. $count;
 
 ?>
        </h1> 
-        
+      </p>   
 
   
   <form action="#" method="get">
@@ -118,7 +107,7 @@ else {echo'Není vyplněno jméno!';
      }
 ?>
 </h1>
-        
+            <p>  
            <h1>Domácí úkol - Fibonacciho posloupnost</h1>
         <p>
         
@@ -173,7 +162,7 @@ else {echo'Není vyplněno jméno!';
        <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Pořadí žáka</th>
+      <th scope="col">Pořadí žáka v poli</th>
       <th scope="col">Jméno žáka</th>
   
     </tr>
@@ -183,22 +172,20 @@ else {echo'Není vyplněno jméno!';
       <?php
       
       $zaci = ['Petr', 'Aleš' , 'Petra' ,'Jakub','Johana', 'Jana', 'Anežka'];
+        $d = 0; $size = count($zaci);
     
-    foreach ($zaci as $jmeno ) {  
-      
+    while( $d < $size ) {  
       ?>
                
   <tr>
-         <?php
-      $d=0;
-      
-      ?>
+  
 
                 
-      <th scope="row">5</th>
-       <td scope="row"><?php  echo $jmeno  ?></td>
+      <td scope="row"><?php  echo $d  ?></td>
+       <td scope="row"><?php  echo $zaci[$d];  ?></td>
     </tr>
            <?php
+        $d=$d+1;
              }
            ?>
          
@@ -239,7 +226,7 @@ else {echo'Není vyplněno jméno!';
         
   <tr>
            
-      <th scope="row"><?php  echo $predmet  ?></th>
+      <td scope="row"><?php  echo $predmet  ?></th>
        <td scope="row"><?php  echo $znamka  ?></td>
     </tr>
        
@@ -261,7 +248,61 @@ else {echo'Není vyplněno jméno!';
   
   $z=0;
   $x=0;
-  
+
+?>
+
+<table>
+  <tr>
+    <th>Čísla</th>
+  <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+    <th>5</th>
+    <th>6</th>
+    <th>7</th>
+    <th>8</th>
+    <th>9</th>
+    </tr>
+       <tr>
+  <th>1</th>
+
+    </tr>
+  <tr>
+  <th>2</th>
+
+    </tr>
+  <tr>
+  <th>3</th>
+
+    </tr>
+  <tr>
+  <th>4</th>
+
+    </tr>
+  <tr>
+  <th>5</th>
+
+    </tr>
+  <tr>
+  <th>6</th>
+
+    </tr>
+   <tr>
+  <th>7</th>
+
+    </tr>
+   <tr>
+  <th>8</th>
+
+    </tr>
+   <tr>
+  <th>9</th>
+
+    </tr>
+  </table>
+
+ <?php  
   while ($z<10) {
     echo $nasobilka1[$z]*$nasobilka2[$x];
     

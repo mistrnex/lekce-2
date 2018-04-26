@@ -91,7 +91,7 @@ echo '<br>Počítadlo přístupů:'. $count;
       </p>   
 
   
-  <form action="#" method="get">
+  <form action="" method="get">
 <input type="text" name="name" placeholder="Zadejte jméno"></input><br/>
 
 <input type="submit" name="submit" value="Submit"></input>
@@ -103,10 +103,28 @@ if( $_GET["name"] )
 echo "Vítejte u nás, ". $_GET['name']. "<br />";
 
 }
-else {echo'Není vyplněno jméno!';
-     }
-?>
+else {echo'Není vyplněno jméno!'; }
+  
+  if( $_GET["name"] ) {
+
+  $int=10000;
+setcookie("name","value",time()+$int);
+  echo 'Cookie: Ahoj '.$_COOKIE["name"];
+  
+  }
+  ?>
 </h1>
+
+<?php
+
+/*name is your cookie's name
+value is cookie's value
+$int is time of cookie expires*/
+?>
+
+<?php
+
+?>
             <p>  
            <h1>Domácí úkol - Fibonacciho posloupnost</h1>
         <p>
@@ -181,7 +199,7 @@ else {echo'Není vyplněno jméno!';
   
 
                 
-      <td scope="row"><?php  echo $d  ?></td>
+      <td scope="row"><?php  echo $d;  ?></td>
        <td scope="row"><?php  echo $zaci[$d];  ?></td>
     </tr>
            <?php
@@ -214,11 +232,10 @@ else {echo'Není vyplněno jméno!';
   
 
   
-   <table class="table">
+   <table class="table" align="center">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Předmět</th>
-      <th scope="col">Známka</th>
+
   
     </tr>
   </thead>
@@ -226,8 +243,8 @@ else {echo'Není vyplněno jméno!';
         
   <tr>
            
-      <td scope="row"><?php  echo $predmet  ?></th>
-       <td scope="row"><?php  echo $znamka  ?></td>
+      <th scope="row" align="center"><?php  echo $predmet  ?></th>
+       <td scope="row" align="center"><?php  echo $znamka  ?></td>
     </tr>
        
 
@@ -240,110 +257,190 @@ else {echo'Není vyplněno jméno!';
     }
         }
   ?>
-      
         <h1>Domácí úkol - Malá násobilka</h1>
        <?php
       $nasobilka1=[1, 2, 3, 4, 5, 6, 7, 8, 9];
       $nasobilka2=[1, 2, 3, 4, 5, 6, 7, 8, 9];
   
-  $z=0;
-  $x=0;
 
+$soucet=count($nasobilka1);
 ?>
 
-<table>
+ <table class="table">
+  <thead class="thead-dark">
+  <tr>
+ 
+
+<?php foreach ($nasobilka1 as $numero) {
+  ?>
+  <th>
+<?php
+  echo $numero;
+     ?>
+      
+
+     </th></tr>
+
+     <?php
+
+        }
+  ?>
+    <?php
+    $dd=1;
+        while( $dd < 10 ) {  
+      ?>
+               
+  <tr>
+  
+
+                
+      <td scope="row"><?php  echo $dd;  ?></td>
+        <?php foreach ($nasobilka2 as $numero3) {
+  ?>
+       <td scope="row"><?php  echo $dd*$numero3;  ?></td>
+    </tr>
+           <?php
+        $dd=$dd+1;
+             }
+        }
+           ?>
+   </thead>
+
+  </table>
+  
+  <h1>Domácí úkol - Malá násobilka TUPĚ</h1>
+
+ <table class="table">
+  <thead class="thead-dark">
   <tr>
     <th>Čísla</th>
-  <th>1</th>
-    <th>2</th>
-    <th>3</th>
-    <th>4</th>
-    <th>5</th>
-    <th>6</th>
-    <th>7</th>
-    <th>8</th>
-    <th>9</th>
-    </tr>
+     <th>1</th>
+     <th>2</th>
+     <th>3</th>
+     <th>4</th>
+     <th>5</th>
+     <th>6</th>
+     <th>7</th>
+     <th>8</th>
+     <th>9</th>
+</tr>
+  <tr>
+   
+     <td>1</td>
+    <?php foreach ($nasobilka2 as $numero2) {
+  ?>
+    <td><?php
+  echo 1*$numero2;
+     ?>
+    </td>
+
+         <?php
+
+        }
+  ?>
+        </tr>  
+    
+    <tr>
+     <td>2</td>
+  <?php foreach ($nasobilka2 as $numero3) {
+  ?>
+    <td><?php
+  echo 2*$numero3;
+     ?></td> 
+     <?php
+
+        }
+  ?>
+            </tr>
+          <tr>
+     <td>3</td>
+            <?php foreach ($nasobilka2 as $numero4) {
+  ?>
+    <td><?php
+  echo 3*$numero4;
+     ?></td> 
+     <?php
+
+        }
+  ?>
+                </tr>
+              <tr>
+     <td>4</td>
+                 <?php foreach ($nasobilka2 as $numero5) {
+  ?>
+    <td><?php
+  echo 4*$numero5;
+     ?></td> 
+     <?php
+
+        }
+  ?>
+                    </tr>
        <tr>
-  <th>1</th>
+     <td>5</td>
+         <?php foreach ($nasobilka2 as $numero5) {
+  ?>
+    <td><?php
+  echo 5*$numero5;
+     ?></td> 
+     <?php
 
-    </tr>
-  <tr>
-  <th>2</th>
+        }
+  ?>
+           </tr>
+            <tr>
+     <td>6</td>
+               <?php foreach ($nasobilka2 as $numero5) {
+  ?>
+    <td><?php
+  echo 6*$numero5;
+     ?></td> 
+     <?php
 
-    </tr>
-  <tr>
-  <th>3</th>
+        }
+  ?>
+             </tr>   
+                 <tr>
+     <td>7</td>
+                     <?php foreach ($nasobilka2 as $numero5) {
+  ?>
+    <td><?php
+  echo 7*$numero5;
+     ?></td> 
+     <?php
 
-    </tr>
-  <tr>
-  <th>4</th>
+        }
+  ?>
+                     </tr>
+      <tr>
+     <td>8</td>
+          <?php foreach ($nasobilka2 as $numero5) {
+  ?>
+    <td><?php
+  echo 8*$numero5;
+     ?></td> 
+     <?php
 
-    </tr>
-  <tr>
-  <th>5</th>
+        }
+  ?>
+         </tr>
+          <tr>
+     <td>9</td>
+              <?php foreach ($nasobilka2 as $numero5) {
+  ?>
+    <td><?php
+  echo 9*$numero5;
+     ?></td> 
+     <?php
 
-    </tr>
-  <tr>
-  <th>6</th>
-
-    </tr>
-   <tr>
-  <th>7</th>
-
-    </tr>
-   <tr>
-  <th>8</th>
-
-    </tr>
-   <tr>
-  <th>9</th>
-
-    </tr>
-  </table>
-
- <?php  
-  while ($z<10) {
-    echo $nasobilka1[$z]*$nasobilka2[$x];
-    
-    $z=$z+1;
-    while ($x<10) {
-      
-      echo $nasobilka1[$z]*$nasobilka2[$x];
-      $x=$x+1;
-      
-    }
-    
-  }
-           ?>
+        }
+  ?>
+ </tr>
   
-  <?php
-// Multidimensional array
-$superheroes = array(
-    "spider-man" => array(
-        "name" => "Peter Parker",
-        "email" => "peterparker@mail.com",
-    ),
-    "super-man" => array(
-        "name" => "Clark Kent",
-        "email" => "clarkkent@mail.com",
-    ),
-    "iron-man" => array(
-        "name" => "Harry Potter",
-        "email" => "harrypotter@mail.com",
-    )
-);
- 
-// Printing all the keys and values one by one
-$keys = array_keys($superheroes);
-for($i = 0; $i < count($superheroes); $i++) {
-    echo $keys[$i] . "{<br>";
-    foreach($superheroes[$keys[$i]] as $key => $value) {
-        echo $key . " : " . $value . "<br>";
-    }
-    echo "}<br>";
-}
-?>
+</table>
+
+  
+  
 
        </h1> 
         <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>

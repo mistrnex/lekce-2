@@ -43,6 +43,9 @@
           <li class="nav-item">
             <a class="nav-link disabled" href="/lekce-2/indexlekce3.php">Lekce 3</a>
           </li>
+             <li class="nav-item">
+            <a class="nav-link disabled" href="/lekce-2/indexlekce4.php">Lekce 4</a>
+          </li>
            <li class="nav-item">
             <a class="nav-link disabled" href="/lekce-2/indextestovaci.php">Testovací stránka</a>
           </li>

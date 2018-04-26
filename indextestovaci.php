@@ -318,6 +318,12 @@ echo '<br>Počítadlo přístupů:'. $count;
 echo $name;
 ?>
 
+<?php
+$cookie_value = "w3resource tutorials";
+setcookie("w3resource", $cookie_value, time()+3600, "/home/your_usename/", "example.com", 1, 1);
+if (isset($_COOKIE['cookie']))
+echo $_COOKIE["w3resource"];
+?>
         <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
       </div>
 

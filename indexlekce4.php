@@ -1,65 +1,21 @@
 <!doctype html>
 <html lang="en">
-  <?php
-   session_start() ;
+ <?php
+  require_once 'templates2.php';
   ?>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
-
-    <title>Lekce 4</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="starter-template.css" rel="stylesheet">
-  </head>
-
-  <body>
-
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/lekce-2/index.php">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/lekce-2/indexlekce3ukoly.php">Úkoly Lekce 3</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="/lekce-2/indexlekce3.php">Lekce 3</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
-
+<?php
+ echo navigace('Lekce 32', 'IT Programators', 'Home', 'Úkoly Lekce3', 'Lekce tři', 'Akce', 'sf', '548');
+  
+  ?> 
     <main role="main" class="container">
 
       <div class="starter-template">
         
 
-
+  <?php
+   session_start() ;
+  $jmena='Petr';
+  ?>
       
  <?php 
   
@@ -107,14 +63,145 @@ $handle = fopen("barvy.txt", "r");
    }
   ?>
            </div>    </div>
+    <?php 
+  
+$handle = fopen("people.txt", "r");
+   $people=[];
+        if ($handle) {
+          while (!feof($handle)) {
+            $people[]=fgets($handle);
+         } 
+        fclose($handle);
+        } else {
+          echo "Error";
+        }
+ 
+     ?>   
+   <h1>
+     Doplňující úkol - people.txt
+        </h1>       
+ <?php
+$q=0;
+while ($q<5) {
+list($user, $gender, $ability) = explode(",", $people[$q]); ?>
+        <h2>
+          <?php echo $user; ?>
+        </h2>
+        <div class="container">
+<table class="table table-bordered">
+  <thead>
+  <tr>
     
+ 
+  <td><h3> Pohlaví</h3></td>
+    <td><h3>Schopnost programování</h3></td>
+       
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+  <td> <?php echo $gender; ?></td>
+    <td><?php echo $ability; ?></td>
+  </tr>
+  </tbody>
+        </table>
+        </div> 
         
         
+<?php
+  $q=$q+1;
+  }
+?>
+        <p>
+          
+      
+            <h1>
+     Doplňující úkol - results.txt
+        </h1> 
+             <?php 
+  
+$handle = fopen("results.txt", "r");
+   $znamky=[];
+        if ($handle) {
+          while (!feof($handle)) {
+            $znamky[]=fgets($handle);
+         } 
+        fclose($handle);
+        } else {
+          echo "Error";
+        }
+ 
+     ?> 
+      <?php
+$w=0;
+      
+while ($w<20) {
+?>
+
+        
+        <h2>
+          <?php echo $znamky[$w]; ?>
+        </h2>
+        <div class="container">
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    
+ 
+  <td><h3> Předmět</h3></td>
+    <td><h3>Známka</h3></td>
+       
+  </tr>
+  </thead>
+  <tbody>
+  <?php
+              
+   
+    list($predmet, $znamka) = explode(",", $znamky[$w+1]); ?>
+    <tr>
+  <td> <?php echo $predmet; ?></td>
+    <td><?php echo $znamka; ?></td>
+  </tr>
+      <?php
+              
+   
+    list($predmet, $znamka) = explode(",", $znamky[$w+2]); ?>
+    <tr>
+  <td> <?php echo $predmet; ?></td>
+    <td><?php echo $znamka; ?></td>
+  </tr>
+      <?php
+              
+   
+    list($predmet, $znamka) = explode(",", $znamky[$w+3]); ?>
+    <tr>
+  <td> <?php echo $predmet; ?></td>
+    <td><?php echo $znamka; ?></td>
+  </tr>
+    
+  </tbody>
+        </table>
+        </div> 
+        
+        
+<?php
+
+      $w=$w+4;
+      
+
+              }
+?>
+        
+          </p>
+    <p>
          <form action="" method="get">
 <input type="text" name="cislo1" placeholder="Číslo 1"></input><br/>
 <input type="text" name="cislo2" placeholder="Číslo 2"></input><br/>
 <input type="submit" name="submit" value="Submit"></input>
 </form>
+ 
+  
+  
   
  <?php
   if (array_key_exists('cislo1', $_GET)) {
@@ -133,6 +220,50 @@ $handle = fopen("barvy.txt", "r");
   }
   ?>
 
+  <h1>
+  
+<?php
+  if(isset($_SESSION['count'])){
+$count = $_SESSION['count'];
+$count++;
+$count = $_SESSION['count'] = $count;
+} else {
+    $count = $_SESSION['count'] = 0;
+    echo 'Vítejte poprvé na naší stránce!';
+}
+
+  
+echo '<br>Počítadlo přístupů:'.$count;
+
+?>
+    
+     <form action="" method="get">
+<input type="text" name="name" placeholder="Zadejte jméno"></input><br/>
+
+<input type="submit" name="submit" value="Submit"></input>
+</form>
+<h1>
+<?php
+  $navstevnici=[];
+if( $_GET["name"] )
+{
+echo "Vítejte u nás, ". $_GET['name']. "<br />";
+
+}
+else {echo'Není vyplněno jméno!'; }
+  
+
+array_push($navstevnici, $_GET["name"]);
+
+
+  file_put_contents('pocitadlo.txt', $count);
+  
+file_put_contents('pocitadlo2.txt', $navstevnici);
+  var_dump($navstevnici);
+  ?>
+
+       </h1> 
+   </p>
     </main><!-- /.container -->
 
     <!-- Bootstrap core JavaScript
